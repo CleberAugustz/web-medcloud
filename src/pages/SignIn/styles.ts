@@ -21,6 +21,10 @@ export const ContainerAccess = styled.div`
     h1 {
         font-family: "Poppins", sans-serif;
         font-weight: 700;
+        border: 1px solid white;
+        padding: 5px 20px;
+        border-radius: 10px;
+        font-size: 50px;
         color: #ffffff;
         margin-bottom: 20px;
     }

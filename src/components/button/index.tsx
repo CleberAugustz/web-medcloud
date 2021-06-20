@@ -1,10 +1,14 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import { Container } from "./styles";
 
-const Button: React.FC = ({ children }) => {
+interface ButtonsProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    name: string;
+}
+
+const Button: React.FC<ButtonsProps> = ({ name, children }) => {
     return (
         <Container>
-            <p>{children}</p>
+            <p>{name}</p>
         </Container>
     );
 };
