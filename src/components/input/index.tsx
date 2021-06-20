@@ -16,11 +16,11 @@ const Input: React.FC<InputProps> = ({ placeholder, ...rest }) => {
 
     const handleInputBlur = useCallback((e) => {
         setIsFocused(false);
-
         setIsFilled(!!e.target.value);
     }, []);
 
     const handleInputChange = useCallback((e) => {
+        console.log(!!e.target.value);
         setIsFilled(!!e.target.value);
     }, []);
 
@@ -31,9 +31,11 @@ const Input: React.FC<InputProps> = ({ placeholder, ...rest }) => {
                     onFocus={handleInputFocus}
                     onBlur={(e) => handleInputBlur(e)}
                     onChange={(e) => handleInputChange(e)}
+                    autoComplete="off"
                     {...rest}
                 />
-                <label className="label ">{placeholder}</label>
+
+                <label className="label">{placeholder}</label>
             </div>
         </Container>
     );

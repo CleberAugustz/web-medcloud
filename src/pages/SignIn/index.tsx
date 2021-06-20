@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import home_image from "../../assets/image/home-image.png";
 import Button from "../../components/button";
 import Input from "../../components/input";
@@ -10,14 +10,40 @@ import {
     ContainerAccess,
     ContainerButtons,
 } from "./styles";
+import api from "../../services/api";
 
 const SignIn: React.FC = () => {
     const history = useHistory();
+    const [cpf, setCpf] = useState();
 
-    const handleAccess = useCallback(() => {
+    const handleAccess = useCallback(async () => {
         try {
-            history.push("/dashboard");
-        } catch (error) {}
+            if (!cpf) {
+                throw new Error("Digite CPF!");
+            }
+
+            const { data } = await api.get("/patients", { params: { cpf } });
+
+            console.log(data);
+
+            if (!data) {
+                throw new Error("Não há elementos");
+            }
+
+            if (data?.Items) {
+                console.log(data.Items[0]);
+            }
+
+            console.log(data.Items);
+
+            // history.push("/dashboard");
+        } catch (error) {
+            alert(error.message);
+        }
+    }, [history, cpf]);
+
+    const handleInput = useCallback((e) => {
+        setCpf(e.target.value);
     }, []);
 
     return (
@@ -29,10 +55,15 @@ const SignIn: React.FC = () => {
                     type="number"
                     name="CPF"
                     placeholder="CPF"
-                    maxLength={10}
+                    onChange={(e) => handleInput(e)}
                 />
                 <ContainerButtons>
-                    <Button name="Cadastrar" />
+                    <Button
+                        name="Cadastrar"
+                        onClick={() => {
+                            history.push("/signup");
+                        }}
+                    />
                     <Button name="Acessar" onClick={handleAccess} />
                 </ContainerButtons>
             </ContainerAccess>

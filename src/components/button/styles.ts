@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+import { shade } from "polished";
+
+export const Container = styled.button`
     background: #e6876e;
     border-radius: 5px;
     padding: 0 10px;
@@ -9,6 +11,7 @@ export const Container = styled.div`
     cursor: pointer;
     display: flex;
     align-items: center;
+    border: 0;
 
     & + & {
         margin-left: 10px;
@@ -22,6 +25,6 @@ export const Container = styled.div`
     }
 
     &:hover {
-        filter: brightness(90%);
+        background: ${shade(0.2, "#e6876e")};
     }
 `;

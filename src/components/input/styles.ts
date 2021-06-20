@@ -19,7 +19,7 @@ export const Container = styled.div<ContainerProps>`
         props.isFocused &&
         css`
             & {
-                height: 45px;
+                height: 50px;
             }
         `}
 
@@ -27,7 +27,7 @@ export const Container = styled.div<ContainerProps>`
         props.isFilled &&
         css`
             & {
-                height: 45px;
+                height: 50px;
             }
         `}
 
@@ -49,7 +49,6 @@ export const Container = styled.div<ContainerProps>`
             position: absolute;
             padding: 0 5px;
             border-radius: 10px;
-
             color: black;
             background: white;
             font-size: 14px;
@@ -84,7 +83,7 @@ export const Container = styled.div<ContainerProps>`
                     z-index: 51;
                 }
                 & {
-                    background: white;
+                    /* background: white; */
                     /* border-color: #ff872c; */
                 }
             `}
