@@ -31,7 +31,6 @@ const Input: React.FC<InputProps> = ({
 
     const handleInputChange = useCallback(
         (e) => {
-            console.log(!!e.target.value);
             setIsFilled(!!e.target.value && !disableExpand);
         },
         [disableExpand]
