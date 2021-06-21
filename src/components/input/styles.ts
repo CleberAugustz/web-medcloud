@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import Tooltip from "../Tooltip";
+
 interface ContainerProps {
     isFocused: boolean;
     isFilled: boolean;
@@ -13,13 +15,15 @@ export const Container = styled.div<ContainerProps>`
     align-items: center;
     border-radius: 5px;
     height: 35px;
-    width: 300px;
+    border: 1px #e6e6f0 solid;
 
     ${(props) =>
         props.isFocused &&
         css`
             & {
                 height: 50px;
+                border: 1px solid;
+                border-color: #8257e5;
             }
         `}
 
@@ -30,6 +34,8 @@ export const Container = styled.div<ContainerProps>`
                 height: 50px;
             }
         `}
+
+
 
     div.container {
         width: 100%;
@@ -51,7 +57,7 @@ export const Container = styled.div<ContainerProps>`
             border-radius: 10px;
             color: black;
             background: white;
-            font-size: 14px;
+            font-size: 12px;
             z-index: 49;
             font-family: Poppins, sans-serif;
             transition: 0.5s all;
@@ -61,7 +67,6 @@ export const Container = styled.div<ContainerProps>`
             props.isFocused &&
             css`
                 label.label {
-                    /* color: #ff872c; */
                     margin-bottom: 35px;
                     margin-left: 5px;
                     font-size: 10px;
@@ -95,7 +100,7 @@ export const Container = styled.div<ContainerProps>`
             z-index: 50;
             background: transparent;
             color: black;
-            font-size: 14px;
+            font-size: 12px;
             width: 100%;
 
             font-family: Poppins, sans-serif;

@@ -24,8 +24,6 @@ const SignIn: React.FC = () => {
 
             const { data } = await api.get("/patients", { params: { cpf } });
 
-            console.log(data);
-
             if (!data) {
                 throw new Error("Não há elementos");
             }
@@ -36,7 +34,7 @@ const SignIn: React.FC = () => {
 
             console.log(data.Items);
 
-            // history.push("/dashboard");
+            history.push("/dashboard");
         } catch (error) {
             alert(error.message);
         }
@@ -52,6 +50,8 @@ const SignIn: React.FC = () => {
             <ContainerAccess>
                 <h1>MedCloud</h1>
                 <Input
+                    style={{ width: 300 }}
+                    disableExpand={false}
                     type="number"
                     name="CPF"
                     placeholder="CPF"

@@ -4,25 +4,38 @@ import { Container } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     name: string;
+    disableExpand?: boolean;
+    error?: string;
 }
 
-const Input: React.FC<InputProps> = ({ placeholder, ...rest }) => {
+const Input: React.FC<InputProps> = ({
+    placeholder,
+    disableExpand = false,
+
+    ...rest
+}) => {
     const [isFocused, setIsFocused] = useState(false);
     const [isFilled, setIsFilled] = useState(false);
 
     const handleInputFocus = useCallback(() => {
-        setIsFocused(true);
-    }, []);
+        setIsFocused(true && !disableExpand);
+    }, [disableExpand]);
 
-    const handleInputBlur = useCallback((e) => {
-        setIsFocused(false);
-        setIsFilled(!!e.target.value);
-    }, []);
+    const handleInputBlur = useCallback(
+        (e) => {
+            setIsFocused(false);
+            setIsFilled(!!e.target.value && !disableExpand);
+        },
+        [disableExpand]
+    );
 
-    const handleInputChange = useCallback((e) => {
-        console.log(!!e.target.value);
-        setIsFilled(!!e.target.value);
-    }, []);
+    const handleInputChange = useCallback(
+        (e) => {
+            console.log(!!e.target.value);
+            setIsFilled(!!e.target.value && !disableExpand);
+        },
+        [disableExpand]
+    );
 
     return (
         <Container isFilled={isFilled} isFocused={isFocused}>

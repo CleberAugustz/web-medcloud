@@ -12,6 +12,7 @@ export const Container = styled.button`
     display: flex;
     align-items: center;
     border: 0;
+    justify-content: center;
 
     & + & {
         margin-left: 10px;
