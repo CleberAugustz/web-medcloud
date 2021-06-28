@@ -11,7 +11,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input: React.FC<InputProps> = ({
     placeholder,
     disableExpand = false,
-
     ...rest
 }) => {
     const [isFocused, setIsFocused] = useState(false);

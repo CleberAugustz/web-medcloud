@@ -65,7 +65,6 @@ export const ContainerFilters = styled.div`
         option {
             outline: 2px solid transparent;
             position: relative;
-            /* z-index: 50; */
             background: transparent;
             color: black;
             font-size: 14px;
@@ -85,31 +84,43 @@ export const ContainerFilters = styled.div`
 export const ContainerPatient = styled.div`
     display: flex;
     align-items: center;
-    width: 500px;
-    height: 150px;
+    width: 600px;
+    max-height: 200px;
     background: #ffffff;
-    padding: 20px;
+    padding: 10px 20px;
+    flex-direction: column;
 
     & + & {
         margin-top: 10px;
     }
 
-    p,
+    p {
+        color: black;
+        font-size: 14px;
+    }
+
     h3 {
         color: black;
+        margin-bottom: 10px;
     }
 
     img {
         width: 100px;
         height: 100px;
     }
+`;
 
-    div {
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
-        /* height: 100%; */
-        /* width: 100%; */
-        margin-left: 20px;
+export const ContainerInfo = styled.div`
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: left;
+
+    svg {
+        cursor: pointer;
+        &:hover {
+            color: red;
+        }
     }
 `;

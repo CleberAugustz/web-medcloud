@@ -40,13 +40,11 @@ export const ContainerSignUp = styled.div`
 
     width: 300px;
     padding: 10px 20px 80px;
-    /* padding-bottom: 80px; */
 
     form {
         width: 100%;
         div {
             background: #fafafc;
-            /* border: 1px #e6e6f0 solid; */
             width: 100%;
             div.container {
                 background: #fafafc;
@@ -81,7 +79,6 @@ export const ContainerSignUp = styled.div`
         }
 
         textarea {
-            /* margin-top: 10px; */
             width: 100%;
             resize: none;
             margin-bottom: 10px;
@@ -103,6 +100,10 @@ export const ContainerSignUp = styled.div`
             padding: 0 5px;
 
             font-family: Poppins, sans-serif;
+
+            &:focus {
+                border-color: #8257e5;
+            }
 
             option {
                 outline: 2px solid transparent;

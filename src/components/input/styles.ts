@@ -56,7 +56,7 @@ export const Container = styled.div<ContainerProps>`
             padding: 0 5px;
             border-radius: 10px;
             color: black;
-            background: white;
+            background: none;
             font-size: 12px;
             z-index: 49;
             font-family: Poppins, sans-serif;
@@ -72,24 +72,16 @@ export const Container = styled.div<ContainerProps>`
                     font-size: 10px;
                     z-index: 51;
                 }
-                & {
-                    /* border-color: #ff872c; */
-                }
             `}
 
         ${(props) =>
             props.isFilled &&
             css`
                 label.label {
-                    /* color: #ff872c; */
                     margin-bottom: 35px;
                     margin-left: 5px;
                     font-size: 10px;
                     z-index: 51;
-                }
-                & {
-                    /* background: white; */
-                    /* border-color: #ff872c; */
                 }
             `}
 

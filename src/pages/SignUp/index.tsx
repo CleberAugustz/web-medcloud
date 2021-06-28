@@ -60,7 +60,6 @@ const SignUp: React.FC = () => {
                     title: "Cadastro realizado com sucesso!",
                     icon: "success",
                 });
-
                 history.push("/");
             } catch (error) {
                 if (error instanceof Yup.ValidationError) {
@@ -78,6 +77,16 @@ const SignUp: React.FC = () => {
                         }
                     });
                 }
+                if (error.response) {
+                    Swal.fire({
+                        icon: "warning",
+                        text: error.response.data.message,
+                        position: "top-end",
+                        toast: true,
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                }
             }
         },
         [history]
@@ -92,6 +101,7 @@ const SignUp: React.FC = () => {
                 </HeaderNavigation>
 
                 <h1>Olá! Esta é sua plataforma</h1>
+                <h2>Realize seu cadastro</h2>
             </Header>
             <ContainerSignUp>
                 <form onSubmit={(e) => handleSubmit(e)}>
@@ -100,7 +110,6 @@ const SignUp: React.FC = () => {
                         name="name"
                         placeholder="Nome"
                         type="text"
-                        style={{}}
                         id="name"
                     />
                     <Input name="cpf" placeholder="CPF" type="text" id="cpf" />
@@ -112,7 +121,7 @@ const SignUp: React.FC = () => {
                     />
                     <select name="gender" id="gender">
                         <option value="man">Masculino</option>
-                        <option value="woman">Mulher</option>
+                        <option value="woman">Feminino</option>
                     </select>
                     <select name="type" id="type">
                         <option value="patient">Paciente</option>
