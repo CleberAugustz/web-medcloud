@@ -121,6 +121,11 @@ const Dashboard: React.FC = () => {
                             disableExpand={true}
                             name="filtro_cpf"
                             type="text"
+                            onKeyPress={(e) => {
+                                if (e.key === "Enter") {
+                                    handleFilter(e);
+                                }
+                            }}
                             onBlur={(e) => handleFilter(e)}
                         />
                     </div>
@@ -158,17 +163,43 @@ const Dashboard: React.FC = () => {
                                 <h3>{patient.name}</h3>
                                 <ContainerInfo>
                                     <div>
-                                        <p>CPF: {patient.cpf}</p>
-                                        <p>Email: {patient.email}</p>
-                                        <p>Sexo: {patient.gender}</p>
-                                        <p>Peso: {patient.weight}</p>
-                                        <p>Altura: {patient.height}</p>
+                                        <p>
+                                            <label>CPF: </label> {patient.cpf}
+                                        </p>
+                                        <p>
+                                            <label>Email: </label>
+                                            {patient.email}
+                                        </p>
+                                        <p>
+                                            <label>Sexo: </label>
+                                            {patient.gender}
+                                        </p>
+                                        <p>
+                                            <label>Peso: </label>
+                                            {patient.weight}
+                                        </p>
+                                        <p>
+                                            <label>Altura: </label>
+                                            {patient.height}
+                                        </p>
                                     </div>
                                     <div>
-                                        <p>Rua: {patient.address.street}</p>
-                                        <p>Número: {patient.address.number}</p>
-                                        <p>Cidade: {patient.address.city}</p>
-                                        <p>Estado: {patient.address.state}</p>
+                                        <p>
+                                            <label>Rua: </label>
+                                            {patient.address.street}
+                                        </p>
+                                        <p>
+                                            <label>Número: </label>
+                                            {patient.address.number}
+                                        </p>
+                                        <p>
+                                            <label>Cidade: </label>
+                                            {patient.address.city}
+                                        </p>
+                                        <p>
+                                            <label>Estado: </label>
+                                            {patient.address.state}
+                                        </p>
                                     </div>
                                     <FiTrash2
                                         color="black"

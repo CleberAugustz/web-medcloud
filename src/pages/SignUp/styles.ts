@@ -37,44 +37,47 @@ export const ContainerSignUp = styled.div`
     display: flex;
     background: #ffffff;
     align-items: center;
+    width: 600px;
+    padding: 30px;
+    top: -30px;
+    position: relative;
 
-    width: 300px;
-    padding: 10px 20px 80px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #e6e6f0;
 
     form {
         width: 100%;
-        div {
-            background: #fafafc;
-            width: 100%;
-            div.container {
-                background: #fafafc;
-                color: #9c98a6;
-                input {
-                    color: #9c98a6;
-                    &:focus {
-                        border-color: red;
-                    }
-                }
+        background: #fafafc;
+        border: 1px #e6e6f0 solid;
+        padding: 10px;
 
-                label.label {
-                    color: #9c98a6;
-                }
+        div.interno {
+            width: 100%;
+            & + div {
+                margin-left: 20px;
             }
         }
+        div.externo {
+            display: flex;
+            width: 100%;
+        }
 
-        label {
-            color: #9c98a6;
+        div.info {
+            div {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+            }
         }
 
         label.obs {
             font-size: 12px;
-            color: #9c98a6;
+            color: black;
         }
 
         h2 {
-            margin-top: 30px;
-            padding-top: 2px;
-            border-top: 1px #e6e6f0 solid;
+            margin-top: 10px;
+            text-align: center;
             color: black;
         }
 
@@ -86,14 +89,13 @@ export const ContainerSignUp = styled.div`
 
         select {
             border: 1px #e6e6f0 solid;
-            background: #fafafc;
             margin-top: 10px;
             display: flex;
             flex-direction: row;
             align-items: center;
             border-radius: 5px;
             height: 35px;
-            color: #9c98a6;
+            color: black;
             font-size: 12px;
             width: 100%;
 
@@ -109,7 +111,7 @@ export const ContainerSignUp = styled.div`
                 outline: 2px solid transparent;
                 position: relative;
                 background: transparent;
-                color: #9c98a6;
+                color: black;
                 font-size: 12px;
                 width: 100%;
 

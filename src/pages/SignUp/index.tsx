@@ -105,76 +105,98 @@ const SignUp: React.FC = () => {
             </Header>
             <ContainerSignUp>
                 <form onSubmit={(e) => handleSubmit(e)}>
-                    <h2>Seus dados</h2>
-                    <Input
-                        name="name"
-                        placeholder="Nome"
-                        type="text"
-                        id="name"
-                    />
-                    <Input name="cpf" placeholder="CPF" type="text" id="cpf" />
-                    <Input
-                        name="email"
-                        placeholder="E-mail"
-                        type="email"
-                        id="email"
-                    />
-                    <select name="gender" id="gender">
-                        <option value="man">Masculino</option>
-                        <option value="woman">Feminino</option>
-                    </select>
-                    <select name="type" id="type">
-                        <option value="patient">Paciente</option>
-                        <option value="doctor">Médico</option>
-                    </select>
-                    <h2>Endereço</h2>
+                    <div className="externo">
+                        <div className="interno">
+                            <h2>Seus dados</h2>
+                            <Input
+                                name="name"
+                                placeholder="Nome"
+                                type="text"
+                                id="name"
+                            />
+                            <Input
+                                name="cpf"
+                                placeholder="CPF"
+                                type="text"
+                                id="cpf"
+                            />
+                            <Input
+                                name="email"
+                                placeholder="E-mail"
+                                type="email"
+                                id="email"
+                            />
+                            <select name="gender" id="gender">
+                                <option value="man">Masculino</option>
+                                <option value="woman">Feminino</option>
+                            </select>
+                            <select name="type" id="type">
+                                <option value="patient">Paciente</option>
+                                <option value="doctor">Médico</option>
+                            </select>
+                        </div>
+                        <div className="interno">
+                            <h2>Endereço</h2>
 
-                    <Input
-                        name="cep"
-                        placeholder="CEP"
-                        type="number"
-                        id="cep"
-                    />
-                    <Input
-                        name="street"
-                        placeholder="Rua"
-                        type="text"
-                        id="street"
-                    />
-                    <Input
-                        name="number"
-                        placeholder="Número"
-                        type="number"
-                        id="number"
-                    />
-                    <Input
-                        name="city"
-                        placeholder="Cidade"
-                        type="text"
-                        id="city"
-                    />
-                    <Input
-                        name="state"
-                        placeholder="Estado"
-                        type="text"
-                        id="state"
-                    />
-                    <h2>Informações adicionais</h2>
-                    <Input
-                        name="weight"
-                        placeholder="Peso"
-                        type="number"
-                        id="weight"
-                    />
-                    <Input
-                        name="height"
-                        placeholder="Altura"
-                        type="number"
-                        id="height"
-                    />
+                            <Input
+                                name="cep"
+                                placeholder="CEP"
+                                type="number"
+                                id="cep"
+                                onPaste={(e) => {
+                                    e.preventDefault();
+                                }}
+                            />
+                            <Input
+                                name="street"
+                                placeholder="Rua"
+                                type="text"
+                                id="street"
+                            />
+                            <Input
+                                name="number"
+                                placeholder="Número"
+                                type="number"
+                                id="number"
+                                onPaste={(e) => {
+                                    e.preventDefault();
+                                }}
+                            />
+                            <Input
+                                name="city"
+                                placeholder="Cidade"
+                                type="text"
+                                id="city"
+                            />
+                            <Input
+                                name="state"
+                                placeholder="Estado"
+                                type="text"
+                                id="state"
+                            />
+                        </div>
+                    </div>
 
-                    <label className="obs">Observações</label>
-                    <textarea name="obs" />
+                    <div className="info">
+                        <h2>Características</h2>
+                        <div>
+                            <Input
+                                name="weight"
+                                placeholder="Peso"
+                                type="text"
+                                id="weight"
+                            />
+                            <Input
+                                name="height"
+                                placeholder="Altura"
+                                type="text"
+                                id="height"
+                            />
+                        </div>
+
+                        <label className="obs">Observações</label>
+                        <textarea name="obs" />
+                    </div>
 
                     <Button name="concluir" type="submit">
                         CONCLUIR

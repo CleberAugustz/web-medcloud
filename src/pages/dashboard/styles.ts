@@ -84,14 +84,21 @@ export const ContainerFilters = styled.div`
 export const ContainerPatient = styled.div`
     display: flex;
     align-items: center;
-    width: 600px;
+    width: 850px;
     max-height: 200px;
     background: #ffffff;
     padding: 10px 20px;
     flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #e6e6f0;
 
     & + & {
         margin-top: 10px;
+    }
+
+    label {
+        color: #6a6180;
+        font-size: 12px;
     }
 
     p {
